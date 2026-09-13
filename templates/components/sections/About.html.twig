@@ -1,0 +1,19 @@
+{% props heading, highlight, description, image, imageAlt, reverse = false %}
+
+<section class="relative flex flex-col items-center justify-center gap-8 overflow-hidden bg-ink px-6 py-24 text-center lg:px-16 lg:py-32 lg:text-left">
+    <div class="relative flex w-full max-w-7xl flex-col items-center gap-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div class="flex flex-col items-center gap-4 lg:items-start lg:gap-6 {{ reverse ? 'lg:order-2' : 'lg:order-1' }}">
+            <h2 class="text-4xl font-extrabold leading-tight text-cream lg:text-5xl">
+                {{ heading }} <span class="text-lime">{{ highlight }}</span>
+            </h2>
+            <p class="max-w-lg text-lg text-taupe lg:max-w-xl lg:text-xl">
+                {{ description }}
+            </p>
+        </div>
+
+        <div class="relative flex items-center justify-center {{ reverse ? 'lg:order-1' : 'lg:order-2' }}">
+            <div class="absolute size-72 rounded-full bg-lime/20 blur-3xl lg:size-104"></div>
+            <img src="{{ asset(image) }}" alt="{{ imageAlt }}" draggable="false" oncontextmenu="return false" class="relative h-64 w-auto select-none [-webkit-user-drag:none] lg:h-96">
+        </div>
+    </div>
+</section>

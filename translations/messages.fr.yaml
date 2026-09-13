@@ -11,3 +11,29 @@ home:
     highlight_daily: 'Une question par jour'
     highlight_culture: 'Culture générale'
     highlight_free: '100% gratuit'
+
+about:
+    heading: 'Zeno, le quiz qui rend accro'
+    highlight: 'à la culture générale.'
+    description: "Zeno t'accompagne chaque jour avec une nouvelle question à découvrir. Progresse à ton rythme, enrichis ta culture générale et regarde ton compagnon grandir au fil de tes bonnes réponses."
+    feature1_title: 'Progresse à ton rythme'
+    feature1_description: 'Une seule question par jour, sans pression : avance quand tu veux, comme tu veux.'
+    feature2_title: 'Ton compagnon évolue'
+    feature2_description: 'Chaque bonne réponse fait grandir ton chat virtuel et débloque de nouvelles humeurs.'
+    feature3_title: 'Culture générale enrichie'
+    feature3_description: "Des questions variées pour apprendre un peu plus chaque jour, en t'amusant."
+
+about_progress:
+    heading: 'Chaque bonne réponse'
+    highlight: 'fait sourire ton chat.'
+    description: 'Zeno réagit à tes progrès en temps réel : plus tu enchaînes les bonnes réponses, plus il affiche sa bonne humeur et grandit à tes côtés.'
+
+about_discover:
+    heading: 'Des questions qui'
+    highlight: 'vont te surprendre.'
+    description: "Histoire, sciences, culture pop, géographie... chaque jour, une nouvelle question choisie pour piquer ta curiosité et t'apprendre quelque chose d'inattendu."
+
+about_streak:
+    heading: 'Rate un jour, et'
+    highlight: 'ton chat fait la tête.'
+    description: 'Reviens chaque jour pour garder ta série en vie : ton compagnon compte sur toi pour rester de bonne humeur !'

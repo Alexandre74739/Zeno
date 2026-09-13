@@ -3,40 +3,41 @@
 {% block title %}{{ 'home.title'|trans }}{% endblock %}
 
 {% block body %}
-    <main class="relative flex h-screen flex-col items-center justify-center gap-8 overflow-hidden bg-ink px-6 text-center lg:px-16 lg:text-left">
-        <div class="relative flex w-full max-w-7xl flex-col items-center gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
-            <img src="{{ asset('logos/Logo-body.svg') }}" alt="Zeno le chat" class="select-none h-36 w-auto lg:order-2 lg:h-auto lg:w-full lg:max-w-lg lg:justify-self-center lg:animate-wiggle">
+    <twig:sections:Hero/>
 
-            <div class="flex flex-col items-center gap-8 lg:order-1 lg:items-start lg:gap-8">
-                <div class="flex flex-col items-center gap-3 lg:items-start lg:gap-4 lg:animate-fade-in-up">
-                    <h1 class="text-4xl font-extrabold leading-tight text-cream lg:text-5xl">
-                        {{ 'home.heading_before'|trans }} <span class="text-lime">Zeno</span> {{ 'home.heading_after'|trans }}
-                    </h1>
-                    <p class="max-w-lg text-lg text-taupe lg:max-w-md lg:text-xl">
-                        {{ 'home.subtitle'|trans }}
-                    </p>
-                </div>
+    <twig:sections:About
+        heading="{{ 'about.heading'|trans }}"
+        highlight="{{ 'about.highlight'|trans }}"
+        description="{{ 'about.description'|trans }}"
+        image="logos/Logo.svg"
+        imageAlt="Zeno"
+    />
 
-                <div class="flex w-full max-w-xs flex-col items-center gap-3 lg:w-auto lg:max-w-none lg:flex-row lg:items-center lg:gap-6 lg:animate-fade-in-up lg:[animation-delay:300ms]">
-                    <twig:ui:Button href="#" variant="primary" class="w-full lg:w-auto lg:px-10">{{ 'home.cta_primary'|trans }}</twig:ui:Button>
-                    <twig:ui:Button href="#" variant="secondary">{{ 'home.cta_secondary'|trans }}</twig:ui:Button>
-                </div>
+    <twig:sections:Features/>
 
-                <div class="hidden items-center gap-8 lg:flex lg:animate-fade-in-up lg:[animation-delay:600ms]">
-                    <div class="flex items-center gap-2 text-sm text-taupe">
-                        <i data-lucide="calendar-days" class="size-5 text-lime"></i>
-                        {{ 'home.highlight_daily'|trans }}
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-taupe">
-                        <i data-lucide="brain" class="size-5 text-lime"></i>
-                        {{ 'home.highlight_culture'|trans }}
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-taupe">
-                        <i data-lucide="sparkles" class="size-5 text-lime"></i>
-                        {{ 'home.highlight_free'|trans }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <twig:sections:About
+        heading="{{ 'about_progress.heading'|trans }}"
+        highlight="{{ 'about_progress.highlight'|trans }}"
+        description="{{ 'about_progress.description'|trans }}"
+        image="logos/Logo-happy.svg"
+        imageAlt="Zeno content"
+        :reverse="true"
+    />
+
+    <twig:sections:About
+        heading="{{ 'about_discover.heading'|trans }}"
+        highlight="{{ 'about_discover.highlight'|trans }}"
+        description="{{ 'about_discover.description'|trans }}"
+        image="logos/Logo-choc.svg"
+        imageAlt="Zeno surpris"
+    />
+
+    <twig:sections:About
+        heading="{{ 'about_streak.heading'|trans }}"
+        highlight="{{ 'about_streak.highlight'|trans }}"
+        description="{{ 'about_streak.description'|trans }}"
+        image="logos/Logo-sad.svg"
+        imageAlt="Zeno triste"
+        :reverse="true"
+    />
 {% endblock %}

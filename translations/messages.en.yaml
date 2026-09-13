@@ -11,3 +11,29 @@ home:
     highlight_daily: 'One question a day'
     highlight_culture: 'General knowledge'
     highlight_free: '100% free'
+
+about:
+    heading: 'Zeno, the trivia quiz that gets you'
+    highlight: 'hooked on learning.'
+    description: 'Zeno keeps you company every day with a new question to discover. Progress at your own pace, grow your general knowledge, and watch your companion grow with every correct answer.'
+    feature1_title: 'Progress at your pace'
+    feature1_description: "One question a day, no pressure: play whenever you want, however you want."
+    feature2_title: 'Your companion evolves'
+    feature2_description: 'Every correct answer grows your virtual cat and unlocks new moods.'
+    feature3_title: 'Growing general knowledge'
+    feature3_description: 'Varied questions to learn a little more every day, while having fun.'
+
+about_progress:
+    heading: 'Every correct answer'
+    highlight: 'puts a smile on your cat.'
+    description: 'Zeno reacts to your progress in real time: the more correct answers you chain, the happier he gets, and the more he grows by your side.'
+
+about_discover:
+    heading: 'Questions that'
+    highlight: 'will catch you off guard.'
+    description: 'History, science, pop culture, geography... every day brings a new question picked to spark your curiosity and teach you something unexpected.'
+
+about_streak:
+    heading: 'Miss a day, and'
+    highlight: 'your cat sulks.'
+    description: 'Come back every day to keep your streak alive: your companion is counting on you to stay in a good mood!'
