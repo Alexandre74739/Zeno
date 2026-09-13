@@ -18,14 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body>
-        {% block body %}
-            <div class="flex min-h-screen flex-col items-center justify-center gap-4 bg-ink p-6">
-                <twig:ui:Button href="#" variant="primary">C'est parti</twig:ui:Button>
-                <twig:ui:Button href="#" variant="secondary">C'est parti</twig:ui:Button>
-                <twig:ui:Button href="#" variant="tertiary">C'est parti</twig:ui:Button>
-                <twig:ui:Button href="#" variant="outline">C'est parti</twig:ui:Button>
-            </div>
-        {% endblock %}
+    <body data-controller="lucide">
+        {% block body %}{% endblock %}
     </body>
 </html>

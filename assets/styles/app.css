@@ -7,3 +7,35 @@
     --color-taupe: #c4c3c2;
     --color-hover: #E7FF8D;
 }
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(-0.5deg);
+    }
+
+    50% {
+        transform: rotate(0.5deg);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@utility animate-wiggle {
+    animation: wiggle 4s ease-in-out infinite;
+}
+
+@utility animate-fade-in-up {
+    animation: fade-in-up 0.7s ease-out both;
+}
