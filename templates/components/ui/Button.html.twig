@@ -1,14 +1,15 @@
 {% props href, variant = 'primary' %}
 
 {% set variants = {
-    primary:   'bg-lime text-ink hover:bg-hover hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]',
-    secondary: 'border-2 border-lime text-lime hover:bg-lime hover:text-ink hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]',
-    tertiary:  'relative text-lime after:absolute after:inset-x-8 after:bottom-3 after:h-0.5 after:origin-left after:scale-x-0 after:bg-lime after:transition-transform after:duration-300 after:ease-out after:content-[\'\'] hover:after:scale-x-100',
+    primary:    'bg-lime text-ink hover:bg-hover hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]',
+    secondary:  'relative text-lime after:absolute after:inset-x-8 after:bottom-3 after:h-0.5 after:origin-left after:scale-x-0 after:bg-lime after:transition-transform after:duration-300 after:ease-out after:content-[\'\'] hover:after:scale-x-100',
+    tertiary:   'bg-cream text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(255,255,255,0.5)]',
+    outline:    'relative isolate overflow-hidden border-2 border-lime text-lime before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-lime before:transition-transform before:duration-500 before:ease-out before:content-[\'\'] hover:text-ink hover:before:scale-x-100 hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]',
 } %}
 
-<a href="{{ href }}" class="group inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold transition-ease duration-300 {{ variants[variant] ?? variants.primary }}">
+<a href="{{ href }}" class="group inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold transition-all duration-300 ease-out {{ variants[variant] ?? variants.primary }}">
     {% block content %}{% endblock %}
-    {% if variant == 'tertiary' %}
-        <twig:ux:icon name="lucide:arrow-right" class="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+    {% if variant == 'secondary' %}
+        <twig:ux:icon name="lucide:arrow-right" class="size-4 transition-transform duration-300 group-hover:translate-x-1"/>
     {% endif %}
 </a>
