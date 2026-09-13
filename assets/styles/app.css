@@ -1,3 +1,8 @@
-body {
-    background-color: skyblue;
+@import "tailwindcss";
+
+@theme {
+    --color-cream: #FDFFF7;
+    --color-ink: #1E1E1E;
+    --color-lime: #D3FF2E;
+    --color-taupe: #9D938E;
 }
