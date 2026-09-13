@@ -1,0 +1,12 @@
+{% props label %}
+
+<details {{ attributes.defaults({class: 'group relative inline-block text-left'}) }} data-controller="dropdown">
+    <summary class="flex cursor-pointer list-none items-center gap-2 text-sm font-bold text-cream select-none [&::-webkit-details-marker]:hidden">
+        {{ label }}
+        <i data-lucide="chevron-down" class="size-4 text-lime transition-transform duration-300 group-open:rotate-180"></i>
+    </summary>
+
+    <div data-action="click->dropdown#close" class="absolute right-0 z-30 mt-2 min-w-40 overflow-hidden rounded-xl border border-cream/10 bg-surface py-1 font-medium text-cream shadow-xl shadow-black/30">
+        {% block content %}{% endblock %}
+    </div>
+</details>

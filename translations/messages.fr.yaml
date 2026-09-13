@@ -1,0 +1,13 @@
+header:
+    language_label: 'Langue du site : %language%'
+
+home:
+    title: 'Prêt à jouer avec Zeno ?'
+    heading_before: 'Prêt à jouer avec'
+    heading_after: '?'
+    subtitle: 'Chaque jour, Zeno vous pose une nouvelle question pour tester vos connaissances, apprendre en vous amusant et faire grandir votre chat virtuel.'
+    cta_primary: "C'est parti !"
+    cta_secondary: "J'ai déjà un compte"
+    highlight_daily: 'Une question par jour'
+    highlight_culture: 'Culture générale'
+    highlight_free: '100% gratuit'

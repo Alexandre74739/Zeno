@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -19,6 +19,20 @@
         {% endif %}
     </head>
     <body data-controller="lucide">
+        <header class="absolute inset-x-0 top-0 z-20 px-6 py-6 lg:px-16">
+            <div class="mx-auto flex w-full max-w-7xl items-center justify-between">
+                <a href="{{ path('app_home') }}">
+                    <img src="{{ asset('logos/Logo-text.svg') }}" alt="Zeno" class="h-9 w-auto lg:h-11">
+                </a>
+
+                {% set current_language = app.request.locale == 'en' ? 'English' : 'Français' %}
+                <twig:ui:Dropdown label="{{ 'header.language_label'|trans({'%language%': current_language}) }}">
+                    <a href="{{ path('app_home', {_locale: 'fr'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'fr' ? 'text-lime' : '' }}">Français</a>
+                    <a href="{{ path('app_home', {_locale: 'en'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'en' ? 'text-lime' : '' }}">English</a>
+                </twig:ui:Dropdown>
+            </div>
+        </header>
+
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,13 @@
+header:
+    language_label: 'Site language: %language%'
+
+home:
+    title: 'Ready to play with Zeno?'
+    heading_before: 'Ready to play with'
+    heading_after: '?'
+    subtitle: 'Every day, Zeno challenges you with a new question to test what you know, learn while having fun, and grow your very own virtual cat.'
+    cta_primary: "Let's go!"
+    cta_secondary: 'I already have an account'
+    highlight_daily: 'One question a day'
+    highlight_culture: 'General knowledge'
+    highlight_free: '100% free'
