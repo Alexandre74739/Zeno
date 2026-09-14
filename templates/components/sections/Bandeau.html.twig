@@ -1,0 +1,24 @@
+<section class="relative bg-lime mt-16 px-6 pb-16 pt-16 text-center lg:px-16">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-16 w-full -translate-y-2/3 select-none text-lime lg:h-24">
+        <path fill="currentColor" d="M0,60 C240,120 480,0 720,40 C960,80 1200,0 1440,60 L1440,120 L0,120 Z"></path>
+    </svg>
+
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute left-[6%] top-12 hidden h-14 w-auto -rotate-12 select-none [-webkit-user-drag:none] lg:block lg:h-20">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute right-[10%] top-10 hidden h-10 w-auto rotate-12 select-none [-webkit-user-drag:none] lg:block lg:h-16">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute left-[4%] top-1/2 hidden h-20 w-auto -translate-y-1/2 -rotate-6 select-none [-webkit-user-drag:none] lg:block lg:h-28">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute right-[4%] top-1/2 hidden h-16 w-auto -translate-y-1/2 rotate-6 select-none [-webkit-user-drag:none] lg:block lg:h-24">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute bottom-10 left-[14%] hidden h-12 w-auto rotate-6 select-none [-webkit-user-drag:none] lg:block lg:h-16">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute bottom-8 right-[13%] hidden h-9 w-auto -rotate-6 select-none [-webkit-user-drag:none] lg:block lg:h-12">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute left-[22%] top-1/4 hidden h-10 w-auto -rotate-6 select-none [-webkit-user-drag:none] lg:block lg:h-14">
+    <img src="{{ asset('decors/Eclair.svg') }}" alt="" aria-hidden="true" draggable="false" class="pointer-events-none absolute right-[20%] bottom-1/4 hidden h-7 w-auto rotate-8 select-none [-webkit-user-drag:none] lg:block lg:h-10">
+
+    <div class="relative mx-auto flex max-w-2xl flex-col items-center gap-6">
+        <h2 class="text-4xl font-extrabold leading-tight text-ink lg:text-5xl">
+            {{ 'bandeau.heading'|trans }}
+        </h2>
+        <p class="max-w-xl text-lg text-ink/80 lg:text-xl">
+            {{ 'bandeau.description'|trans }}
+        </p>
+        <twig:ui:Button href="#" variant="dark" class="w-full max-w-xs lg:w-auto lg:px-10">{{ 'bandeau.cta_primary'|trans }}</twig:ui:Button>
+    </div>
+</section>

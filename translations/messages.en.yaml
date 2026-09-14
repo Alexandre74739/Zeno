@@ -37,3 +37,8 @@ about_streak:
     heading: 'Miss a day, and'
     highlight: 'your cat sulks.'
     description: 'Come back every day to keep your streak alive: your companion is counting on you to stay in a good mood!'
+
+bandeau:
+    heading: 'Come feed your cat some knowledge.'
+    description: 'Every correct answer feeds your cat, who grows and purrs with delight: try it for free, no credit card needed.'
+    cta_primary: 'I Join Zeno'

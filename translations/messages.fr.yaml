@@ -37,3 +37,8 @@ about_streak:
     heading: 'Rate un jour, et'
     highlight: 'ton chat fait la tête.'
     description: 'Reviens chaque jour pour garder ta série en vie : ton compagnon compte sur toi pour rester de bonne humeur !'
+
+bandeau:
+    heading: 'Viens nourrir ton chat de connaissances.'
+    description: 'Chaque bonne réponse nourrit ton chat, qui grandit et ronronne de plaisir : essaie gratuitement, sans carte bancaire.'
+    cta_primary: 'Je rejoins Zeno'
