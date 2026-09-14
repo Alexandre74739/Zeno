@@ -38,6 +38,20 @@ about_streak:
     highlight: 'your cat sulks.'
     description: 'Come back every day to keep your streak alive: your companion is counting on you to stay in a good mood!'
 
+faq:
+    heading: 'Got questions? We have answers.'
+    description: 'Everything you need to know before joining Zeno and growing your companion day after day.'
+    item1_question: 'Is Zeno really free?'
+    item1_answer: "Yes, 100% free and no credit card needed. A new question is waiting for you every day, with no limit."
+    item2_question: 'How much time does it take each day?'
+    item2_answer: 'Just a few seconds! One question a day, at your own pace, no pressure and no timer.'
+    item3_question: 'What happens if I miss a day?'
+    item3_answer: 'Your streak breaks and your cat sulks, but you can start a new one the very next day.'
+    item4_question: 'Do I need an account to play?'
+    item4_answer: 'An account lets you save your progress and keep your companion from one visit to the next.'
+    item5_question: 'What topics do the questions cover?'
+    item5_answer: 'History, science, pop culture, geography and more: topics change every day to broaden your general knowledge.'
+
 bandeau:
     heading: 'Come feed your cat some knowledge.'
     description: 'Every correct answer feeds your cat, who grows and purrs with delight: try it for free, no credit card needed.'

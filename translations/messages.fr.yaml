@@ -38,6 +38,20 @@ about_streak:
     highlight: 'ton chat fait la tête.'
     description: 'Reviens chaque jour pour garder ta série en vie : ton compagnon compte sur toi pour rester de bonne humeur !'
 
+faq:
+    heading: 'Des questions ? On a les réponses.'
+    description: "Tout ce qu'il faut savoir avant de rejoindre Zeno et de faire grandir ton compagnon jour après jour."
+    item1_question: 'Est-ce que Zeno est vraiment gratuit ?'
+    item1_answer: "Oui, 100% gratuit et sans carte bancaire. Une nouvelle question t'attend chaque jour, sans limite."
+    item2_question: 'Combien de temps ça prend chaque jour ?'
+    item2_answer: "Quelques secondes ! Une seule question par jour, à ton rythme, sans pression ni chronomètre."
+    item3_question: 'Que se passe-t-il si je rate un jour ?'
+    item3_answer: 'Ta série est interrompue et ton chat fait la tête, mais tu peux reprendre dès le lendemain pour en recommencer une nouvelle.'
+    item4_question: "Ai-je besoin d'un compte pour jouer ?"
+    item4_answer: "Un compte te permet de sauvegarder ta progression et de garder ton compagnon d'une visite à l'autre."
+    item5_question: "Sur quels thèmes portent les questions ?"
+    item5_answer: 'Histoire, sciences, culture pop, géographie et bien plus : les thèmes varient chaque jour pour élargir ta culture générale.'
+
 bandeau:
     heading: 'Viens nourrir ton chat de connaissances.'
     description: 'Chaque bonne réponse nourrit ton chat, qui grandit et ronronne de plaisir : essaie gratuitement, sans carte bancaire.'

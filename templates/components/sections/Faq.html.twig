@@ -1,0 +1,27 @@
+{% props items %}
+
+<section class="bg-ink px-6 py-24 lg:px-16 lg:py-32">
+    <div class="mx-auto flex w-full max-w-5xl flex-col gap-4 text-center">
+        <h2 class="text-4xl font-extrabold leading-tight text-cream lg:text-5xl">
+            {{ 'faq.heading'|trans }}
+        </h2>
+        <p class="mx-auto max-w-2xl text-lg text-taupe lg:text-xl">
+            {{ 'faq.description'|trans }}
+        </p>
+
+        <div class="mt-10 flex flex-col gap-4 text-left">
+            {% for item in items %}
+                <details class="group rounded-2xl border border-white/10 bg-white/5 px-6 py-5 transition-colors duration-300 hover:border-lime/30">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-cream select-none [&::-webkit-details-marker]:hidden">
+                        {{ item.questionKey|trans }}
+                        <i data-lucide="chevron-down" class="size-5 shrink-0 text-lime transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+
+                    <p class="mt-4 text-taupe">
+                        {{ item.answerKey|trans }}
+                    </p>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+</section>
