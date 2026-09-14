@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cookie_policy.meta_title'|trans }}{% endblock %}
+
+{% block body %}
+    {% set sections = [
+        {id: 'what', heading: 'cookie_policy.what_heading'|trans, body: 'cookie_policy.what_body'|trans},
+        {id: 'used', heading: 'cookie_policy.used_heading'|trans, body: 'cookie_policy.used_body'|trans},
+        {id: 'no-tracking', heading: 'cookie_policy.no_tracking_heading'|trans, body: 'cookie_policy.no_tracking_body'|trans},
+        {id: 'manage', heading: 'cookie_policy.manage_heading'|trans, body: 'cookie_policy.manage_body'|trans},
+        {id: 'contact', heading: 'cookie_policy.contact_heading'|trans, body: 'cookie_policy.contact_body'|trans},
+    ] %}
+
+    <twig:layout:LegalPage
+        heading="{{ 'cookie_policy.title'|trans }}"
+        updated="2026-09-14"
+        intro="{{ 'cookie_policy.intro'|trans }}"
+        :sections="sections"
+    />
+{% endblock %}

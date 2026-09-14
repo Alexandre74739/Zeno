@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'legal_notice.meta_title'|trans }}{% endblock %}
+
+{% block body %}
+    {% set sections = [
+        {id: 'editor', heading: 'legal_notice.editor_heading'|trans, body: 'legal_notice.editor_body'|trans},
+        {id: 'hosting', heading: 'legal_notice.hosting_heading'|trans, body: 'legal_notice.hosting_body'|trans},
+        {id: 'ip', heading: 'legal_notice.ip_heading'|trans, body: 'legal_notice.ip_body'|trans},
+        {id: 'contact', heading: 'legal_notice.contact_heading'|trans, body: 'legal_notice.contact_body'|trans},
+    ] %}
+
+    <twig:layout:LegalPage heading="{{ 'legal_notice.title'|trans }}" updated="2026-09-14" :sections="sections"/>
+{% endblock %}

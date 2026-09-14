@@ -56,3 +56,73 @@ bandeau:
     heading: 'Viens nourrir ton chat de connaissances.'
     description: 'Chaque bonne réponse nourrit ton chat, qui grandit et ronronne de plaisir : essaie gratuitement, sans carte bancaire.'
     cta_primary: 'Je rejoins Zeno'
+
+footer:
+    tagline: "Zeno t'accompagne chaque jour pour apprendre en t'amusant et faire grandir ton compagnon."
+    cta_text: 'Prêt à faire grandir ton chat ?'
+    cta_primary: 'Je rejoins Zeno'
+    nav_heading: 'Découvrir'
+    link_home: 'Accueil'
+    link_about: 'À propos'
+    link_features: 'Fonctionnalités'
+    link_faq: 'FAQ'
+    legal_heading: 'Légal'
+    link_legal_notice: 'Mentions légales'
+    link_privacy_policy: 'Politique de confidentialité'
+    link_cookie_policy: 'Politique de cookies'
+    copyright: '© %year% Zeno. Tous droits réservés.'
+
+legal:
+    last_updated: 'Dernière mise à jour : %date%'
+    pages_heading: 'Pages légales'
+    toc_heading: 'Sur cette page'
+
+legal_notice:
+    title: 'Mentions légales'
+    meta_title: 'Mentions légales | Zeno'
+    editor_heading: 'Éditeur du site'
+    editor_body: "Le site Zeno est édité par [raison sociale à compléter], [forme juridique, ex. SAS au capital de ... €], immatriculée au RCS de [ville] sous le numéro [SIRET]. Siège social : [adresse complète]. Numéro de TVA intracommunautaire : [numéro]. Directeur de la publication : [nom du responsable]. Contact : [email de contact]."
+    hosting_heading: 'Hébergement'
+    hosting_body: "Le site est hébergé par [nom de l'hébergeur], [adresse de l'hébergeur], [téléphone de l'hébergeur]."
+    ip_heading: 'Propriété intellectuelle'
+    ip_body: "L'ensemble des contenus présents sur le site Zeno (textes, images, logos, illustrations, code) est protégé par le droit de la propriété intellectuelle. Toute reproduction ou représentation, totale ou partielle, sans autorisation préalable est interdite."
+    contact_heading: 'Contact'
+    contact_body: "Pour toute question relative au site, vous pouvez nous contacter à l'adresse [email de contact]."
+
+privacy_policy:
+    title: 'Politique de confidentialité'
+    meta_title: 'Politique de confidentialité | Zeno'
+    intro: 'Cette politique explique quelles données Zeno collecte lorsque vous créez un compte et utilisez le jeu, pourquoi, et comment exercer vos droits conformément au Règlement général sur la protection des données (RGPD).'
+    controller_heading: 'Responsable du traitement'
+    controller_body: "Le responsable du traitement des données est [raison sociale à compléter], contactable à l'adresse [email de contact]."
+    data_heading: 'Données collectées'
+    data_body: "Lors de la création d'un compte, nous collectons votre adresse email, votre pseudonyme et votre mot de passe (stocké de façon chiffrée). Nous conservons également votre progression de jeu (réponses données, séries, évolution de votre compagnon virtuel)."
+    purpose_heading: 'Finalités du traitement'
+    purpose_body: 'Ces données sont utilisées pour créer et sécuriser votre compte, vous permettre de jouer et de sauvegarder votre progression, et vous contacter en cas de besoin lié à votre compte.'
+    legal_basis_heading: 'Base légale'
+    legal_basis_body: "Le traitement repose sur l'exécution du contrat qui nous lie à vous lorsque vous créez un compte (fourniture du service de jeu), et sur notre intérêt légitime à assurer la sécurité du service."
+    retention_heading: 'Durée de conservation'
+    retention_body: "Vos données sont conservées tant que votre compte est actif. En cas d'inactivité prolongée ou de suppression de compte, elles sont supprimées ou anonymisées dans un délai raisonnable."
+    recipients_heading: 'Destinataires des données'
+    recipients_body: "Vos données ne sont ni vendues ni partagées à des fins commerciales. Elles peuvent être transmises à nos prestataires techniques (hébergement, envoi d'emails) strictement nécessaires au fonctionnement du service."
+    rights_heading: 'Vos droits'
+    rights_body: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Vous pouvez exercer ces droits en nous contactant à [email de contact]. Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (www.cnil.fr)."
+    security_heading: 'Sécurité'
+    security_body: 'Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre tout accès non autorisé, perte ou altération.'
+    changes_heading: 'Modifications'
+    changes_body: 'Cette politique peut être mise à jour. La date de dernière mise à jour est indiquée en haut de cette page.'
+
+cookie_policy:
+    title: 'Politique de cookies'
+    meta_title: 'Politique de cookies | Zeno'
+    intro: "Cette page explique ce qu'est un cookie et quels cookies sont utilisés sur Zeno."
+    what_heading: "Qu'est-ce qu'un cookie ?"
+    what_body: "Un cookie est un petit fichier texte déposé sur votre appareil lors de votre navigation, permettant notamment de vous reconnaître d'une page à l'autre ou d'une visite à l'autre."
+    used_heading: 'Cookies utilisés sur Zeno'
+    used_body: 'À ce jour, Zeno utilise uniquement des cookies strictement nécessaires au fonctionnement du service : le cookie de session qui vous maintient connecté à votre compte le temps de votre visite. Ce cookie ne nécessite pas votre consentement car il est indispensable à la fourniture du service que vous demandez.'
+    no_tracking_heading: 'Pas de cookies de mesure ou publicitaires'
+    no_tracking_body: "Zeno n'utilise actuellement aucun cookie de mesure d'audience, publicitaire ou de réseau social. Si cela devait changer, un bandeau de consentement vous permettant d'accepter ou de refuser ces cookies serait affiché avant tout dépôt."
+    manage_heading: 'Gérer les cookies'
+    manage_body: 'Vous pouvez à tout moment configurer votre navigateur pour refuser les cookies. Le cookie de session étant strictement nécessaire, son refus vous empêchera de rester connecté à votre compte.'
+    contact_heading: 'Contact'
+    contact_body: 'Pour toute question sur cette politique, contactez-nous à [email de contact].'

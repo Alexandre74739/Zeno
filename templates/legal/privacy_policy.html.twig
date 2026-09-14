@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'privacy_policy.meta_title'|trans }}{% endblock %}
+
+{% block body %}
+    {% set sections = [
+        {id: 'controller', heading: 'privacy_policy.controller_heading'|trans, body: 'privacy_policy.controller_body'|trans},
+        {id: 'data', heading: 'privacy_policy.data_heading'|trans, body: 'privacy_policy.data_body'|trans},
+        {id: 'purpose', heading: 'privacy_policy.purpose_heading'|trans, body: 'privacy_policy.purpose_body'|trans},
+        {id: 'legal-basis', heading: 'privacy_policy.legal_basis_heading'|trans, body: 'privacy_policy.legal_basis_body'|trans},
+        {id: 'retention', heading: 'privacy_policy.retention_heading'|trans, body: 'privacy_policy.retention_body'|trans},
+        {id: 'recipients', heading: 'privacy_policy.recipients_heading'|trans, body: 'privacy_policy.recipients_body'|trans},
+        {id: 'rights', heading: 'privacy_policy.rights_heading'|trans, body: 'privacy_policy.rights_body'|trans},
+        {id: 'security', heading: 'privacy_policy.security_heading'|trans, body: 'privacy_policy.security_body'|trans},
+        {id: 'changes', heading: 'privacy_policy.changes_heading'|trans, body: 'privacy_policy.changes_body'|trans},
+    ] %}
+
+    <twig:layout:LegalPage
+        heading="{{ 'privacy_policy.title'|trans }}"
+        updated="2026-09-14"
+        intro="{{ 'privacy_policy.intro'|trans }}"
+        :sections="sections"
+    />
+{% endblock %}

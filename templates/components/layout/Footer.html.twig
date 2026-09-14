@@ -1,0 +1,70 @@
+<footer class="border-t border-white/10 bg-ink px-6 py-16 lg:px-16">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-12">
+        <div class="flex flex-col items-center gap-12 text-center lg:flex-row lg:items-start lg:justify-between lg:text-left">
+            <div class="flex flex-col items-center gap-4 lg:max-w-xs lg:items-start">
+                <a href="{{ path('app_home') }}" draggable="false" class="[-webkit-user-drag:none]">
+                    <img src="{{ asset('logos/Logo-text.svg') }}" alt="Zeno" draggable="false" oncontextmenu="return false" class="h-9 w-auto select-none [-webkit-user-drag:none]">
+                </a>
+                <p class="text-taupe max-w-sm lg:max-w-xl">
+                    {{ 'footer.tagline'|trans }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 sm:gap-16">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-sm font-bold tracking-wide text-cream uppercase">
+                        {{ 'footer.nav_heading'|trans }}
+                    </h3>
+                    <a href="{{ path('app_home') }}" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_home'|trans }}
+                    </a>
+                    <a href="{{ path('app_home') }}#about" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_about'|trans }}
+                    </a>
+                    <a href="{{ path('app_home') }}#features" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_features'|trans }}
+                    </a>
+                    <a href="{{ path('app_home') }}#faq" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_faq'|trans }}
+                    </a>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-sm font-bold tracking-wide text-cream uppercase">
+                        {{ 'footer.legal_heading'|trans }}
+                    </h3>
+                    <a href="{{ path('app_legal_notice', {_locale: app.request.locale}) }}" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_legal_notice'|trans }}
+                    </a>
+                    <a href="{{ path('app_privacy_policy', {_locale: app.request.locale}) }}" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_privacy_policy'|trans }}
+                    </a>
+                    <a href="{{ path('app_cookie_policy', {_locale: app.request.locale}) }}" class="text-taupe transition-colors duration-200 hover:text-lime">
+                        {{ 'footer.link_cookie_policy'|trans }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-6 lg:items-end">
+                {% set current_language = app.request.locale == 'en' ? 'English' : 'Français' %}
+                <twig:ui:Dropdown label="{{ 'header.language_label'|trans({'%language%': current_language}) }}">
+                    <a href="{{ path('app_home', {_locale: 'fr'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'fr' ? 'text-lime' : '' }}">Français</a>
+                    <a href="{{ path('app_home', {_locale: 'en'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'en' ? 'text-lime' : '' }}">English</a>
+                </twig:ui:Dropdown>
+
+                <div class="flex flex-col items-center gap-3 lg:items-end">
+                    <p class="text-taupe">
+                        {{ 'footer.cta_text'|trans }}
+                    </p>
+                    <twig:ui:Button href="#" variant="primary">{{ 'footer.cta_primary'|trans }}</twig:ui:Button>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-sm text-taupe">
+                {{ 'footer.copyright'|trans({'%year%': 'now'|date('Y')}) }}
+            </p>
+        </div>
+    </div>
+</footer>

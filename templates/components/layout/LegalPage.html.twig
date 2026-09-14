@@ -1,0 +1,66 @@
+{% props heading, updated, sections, intro = null %}
+
+{% set legal_pages = [
+    {route: 'app_legal_notice', label: 'footer.link_legal_notice'|trans, icon: 'file-text'},
+    {route: 'app_privacy_policy', label: 'footer.link_privacy_policy'|trans, icon: 'shield-check'},
+    {route: 'app_cookie_policy', label: 'footer.link_cookie_policy'|trans, icon: 'cookie'},
+] %}
+{% set current_route = app.request.attributes.get('_route') %}
+
+<section class="bg-ink px-6 py-24 lg:px-16 lg:py-32">
+    <div class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[220px_minmax(0,1fr)_220px]">
+        <nav class="flex gap-2 overflow-x-auto pb-2 lg:sticky lg:top-28 lg:w-full lg:shrink-0 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0">
+            <p class="hidden text-xs font-bold tracking-wide text-taupe uppercase lg:mb-2 lg:block">
+                {{ 'legal.pages_heading'|trans }}
+            </p>
+            {% for item in legal_pages %}
+                {% set is_active = current_route == item.route %}
+                <a
+                    href="{{ path(item.route, {_locale: app.request.locale}) }}"
+                    class="flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-colors duration-200 {{ is_active ? 'bg-lime text-ink' : 'text-taupe hover:bg-white/5 hover:text-cream' }}"
+                >
+                    <i data-lucide="{{ item.icon }}" class="size-4 shrink-0"></i>
+                    {{ item.label }}
+                </a>
+            {% endfor %}
+        </nav>
+
+        <div class="flex min-w-0 flex-col gap-10">
+            <div class="flex flex-col gap-3">
+                <h1 class="text-4xl font-extrabold leading-tight text-cream lg:text-5xl">
+                    {{ heading }}
+                </h1>
+                <p class="text-sm text-taupe">
+                    {{ 'legal.last_updated'|trans({'%date%': updated}) }}
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-8 text-taupe">
+                {% if intro %}
+                    <p>{{ intro }}</p>
+                {% endif %}
+
+                {% for item in sections %}
+                    <section id="{{ item.id }}" class="flex scroll-mt-24 flex-col gap-3">
+                        <h2 class="text-xl font-bold text-cream">{{ item.heading }}</h2>
+                        <p>{{ item.body }}</p>
+                    </section>
+                {% endfor %}
+            </div>
+        </div>
+
+        <nav class="hidden xl:sticky xl:top-28 xl:flex xl:w-full xl:shrink-0 xl:flex-col xl:gap-1">
+            <p class="mb-2 text-xs font-bold tracking-wide text-taupe uppercase">
+                {{ 'legal.toc_heading'|trans }}
+            </p>
+            {% for item in sections %}
+                <a
+                    href="#{{ item.id }}"
+                    class="rounded-lg px-3 py-2 text-sm text-taupe transition-colors duration-200 hover:bg-white/5 hover:text-lime"
+                >
+                    {{ item.heading }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+</section>
