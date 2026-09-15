@@ -1,0 +1,7 @@
+{% props icon, value, label, accent = false %}
+
+<div class="flex items-center gap-2 rounded-full border {{ accent ? 'border-lime/30 bg-lime/5' : 'border-white/10 bg-white/5' }} px-4 py-2 text-cream">
+    <i data-lucide="{{ icon }}" class="size-5 text-lime" aria-hidden="true"></i>
+    <span class="font-bold">{{ value }}</span>
+    <span class="text-sm text-taupe">{{ label }}</span>
+</div>

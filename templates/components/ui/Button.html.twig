@@ -1,4 +1,4 @@
-{% props href, variant = 'primary' %}
+{% props href = null, type = null, variant = 'primary' %}
 
 {% set variants = {
     primary:    'bg-lime text-ink hover:bg-hover hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]',
@@ -9,9 +9,17 @@
     'outline-dark': 'relative isolate overflow-hidden border-2 border-ink text-ink before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-ink before:transition-transform before:duration-500 before:ease-out before:content-[\'\'] hover:text-cream hover:before:scale-x-100',
 } %}
 
-<a href="{{ href }}" {{ attributes.defaults({class: 'group inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold transition-all duration-300 ease-out ' ~ (variants[variant] ?? variants.primary)}) }}>
-    {% block content %}{% endblock %}
-    {% if variant == 'secondary' %}
-        <i data-lucide="arrow-right" class="size-4 transition-transform duration-300 group-hover:translate-x-1"></i>
-    {% endif %}
-</a>
+{% set classes = 'group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold transition-all duration-300 ease-out ' ~ (variants[variant] ?? variants.primary) %}
+
+{% if type %}
+    <button type="{{ type }}" {{ attributes.defaults({class: classes}) }}>
+        {% block content %}{% endblock %}
+    </button>
+{% else %}
+    <a href="{{ href }}" {{ attributes.defaults({class: classes}) }}>
+        {{ block('content') }}
+        {% if variant == 'secondary' %}
+            <i data-lucide="arrow-right" class="size-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+        {% endif %}
+    </a>
+{% endif %}

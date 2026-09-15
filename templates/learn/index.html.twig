@@ -3,16 +3,66 @@
 {% block title %}{{ 'learn.meta_title'|trans }}{% endblock %}
 
 {% block body %}
-    <section class="flex min-h-screen flex-col items-center justify-center gap-6 bg-ink px-6 py-24 text-center lg:px-16">
-        <div class="flex size-16 items-center justify-center rounded-2xl bg-lime/10">
-            <i data-lucide="sparkles" class="size-8 text-lime"></i>
-        </div>
+    <section class="flex h-screen items-center justify-center overflow-y-auto bg-ink px-6 py-10 lg:px-16">
+        <div class="mx-auto flex w-full max-w-6xl flex-col items-center gap-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div class="flex flex-col items-center gap-6 text-center">
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <twig:ui:StatBadge icon="flame" value="{{ progress.currentStreak }}" label="{{ 'learn.stats.streak'|trans }}" :accent="progress.currentStreak > 0"/>
+                    <twig:ui:StatBadge icon="trophy" value="{{ progress.totalCorrectAnswers }}" label="{{ 'learn.stats.total'|trans }}"/>
+                </div>
 
-        <h1 class="text-3xl font-extrabold leading-tight text-cream lg:text-4xl">
-            {{ 'learn.heading'|trans({'%prenom%': app.user.prenom}) }}
-        </h1>
-        <p class="max-w-lg text-taupe">
-            {{ 'learn.coming_soon'|trans }}
-        </p>
+                <h1 class="text-3xl font-extrabold leading-tight text-cream lg:text-5xl">
+                    {{ 'learn.heading'|trans({'%prenom%': app.user.prenom}) }}
+                </h1>
+
+                <img src="{{ asset(progress.moodEnum.logo) }}" alt="{{ progress.moodEnum.translationKey|trans }}" draggable="false" oncontextmenu="return false" class="h-52 w-auto select-none [-webkit-user-drag:none] lg:h-64">
+
+                <p class="max-w-sm text-lg text-taupe">{{ progress.moodEnum.translationKey|trans }}</p>
+
+                {% set moodThreshold = progress.moodEnum.progressThreshold %}
+                <div class="flex w-full max-w-sm flex-col gap-2">
+                    <div class="flex items-center justify-between text-xs font-bold tracking-wide text-lime uppercase">
+                        <span>{{ 'learn.mood.xp_label'|trans }}</span>
+                        <span class="text-taupe normal-case">
+                            {% if moodThreshold %}
+                                {{ 'learn.mood.progress'|trans({'%current%': progress.moodProgress, '%threshold%': moodThreshold}) }}
+                            {% else %}
+                                {{ 'learn.mood.progress_maxed'|trans }}
+                            {% endif %}
+                        </span>
+                    </div>
+                    <twig:ui:ProgressBar percent="{{ progress.moodProgressPercent }}"/>
+                </div>
+            </div>
+
+            <div class="mx-auto w-full max-w-lg" data-controller="quiz-modal">
+                <twig:ui:Button type="button" variant="primary" data-action="quiz-modal#open" class="w-full lg:hidden">
+                    <i data-lucide="sparkles" class="size-5" aria-hidden="true"></i>
+                    {{ 'learn.quiz.open_button'|trans }}
+                </twig:ui:Button>
+
+                <div
+                    data-quiz-modal-target="panel"
+                    data-action="click->quiz-modal#close"
+                    class="hidden fixed inset-0 z-50 items-center justify-center bg-black/60 p-4 opacity-0 transition-opacity duration-300 lg:static lg:z-auto lg:flex lg:items-stretch lg:justify-start lg:bg-transparent lg:p-0 lg:opacity-100"
+                >
+                    <div
+                        data-action="click->quiz-modal#stopPropagation"
+                        data-quiz-modal-target="dialog"
+                        tabindex="-1"
+                        aria-labelledby="quiz-heading"
+                        class="max-h-[85vh] w-full max-w-lg translate-y-4 overflow-y-auto rounded-2xl bg-surface p-6 text-left shadow-2xl shadow-black/40 transition-transform duration-300 focus:outline-none lg:max-h-none lg:max-w-none lg:translate-y-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none"
+                    >
+                        <div class="mb-4 flex justify-end lg:hidden">
+                            <button type="button" data-action="quiz-modal#close" aria-label="{{ 'learn.quiz.close_button'|trans }}" class="-m-2 rounded-lg p-2 text-taupe transition-colors duration-200 hover:text-cream">
+                                <i data-lucide="x" class="size-6" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        {% include 'learn/_quiz_content.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}

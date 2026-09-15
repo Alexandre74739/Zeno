@@ -1,0 +1,39 @@
+{% if not question %}
+    <p class="text-taupe">{{ 'learn.quiz.no_question'|trans }}</p>
+{% elseif todaysAnswer %}
+    <div class="flex flex-col items-center gap-4 py-6 text-center">
+        <div class="animate-pop-in flex size-20 items-center justify-center rounded-full bg-lime/10">
+            <i data-lucide="check" class="size-10 text-lime" aria-hidden="true"></i>
+        </div>
+        <span class="rounded-full bg-lime px-3 py-1 text-xs font-extrabold tracking-wide text-ink uppercase">{{ 'learn.quiz.xp_reward'|trans }}</span>
+        <p class="text-2xl font-extrabold text-cream">{{ 'learn.quiz.answered_correct'|trans }}</p>
+        <p class="text-taupe">{{ 'learn.quiz.come_back_tomorrow'|trans }}</p>
+    </div>
+{% else %}
+    {% set wrongChoiceId = app.flashes('wrong_choice_id')|first %}
+    {% set letters = ['A', 'B', 'C', 'D', 'E', 'F'] %}
+
+    <h2 id="quiz-heading" class="mb-3 inline-flex items-center gap-2 text-sm font-bold tracking-wide text-lime uppercase">
+        <i data-lucide="brain" class="size-4" aria-hidden="true"></i>
+        {{ 'learn.quiz.heading'|trans }}
+    </h2>
+    <p class="mb-6 text-lg font-bold text-cream">{{ question.prompt }}</p>
+
+    {{ form_start(form, {action: path('app_learn_answer', {_locale: app.request.locale, id: question.id}), attr: {class: 'flex flex-col gap-3'}}) }}
+    {{ form_errors(form.choice) }}
+    {% for radio in form.choice %}
+        {% set isWrong = wrongChoiceId and radio.vars.value == wrongChoiceId %}
+        <div class="relative">
+            {{ form_widget(radio, {attr: {class: 'peer sr-only'}}) }}
+            <label for="{{ radio.vars.id }}" class="flex cursor-pointer items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-cream transition-colors duration-200 select-none hover:border-lime/40 hover:bg-white/10 peer-checked:border-lime peer-checked:bg-lime/10 peer-checked:text-lime peer-focus-visible:ring-2 peer-focus-visible:ring-lime peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-surface{{ isWrong ? ' animate-shake border-red-500/60 bg-red-500/10 text-red-400' : '' }}">
+                <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">{{ letters[loop.index0] }}</span>
+                <span>{{ radio.vars.label }}</span>
+            </label>
+        </div>
+    {% endfor %}
+
+    <twig:ui:Button type="submit" variant="primary" class="mt-3 w-full">
+        {{ 'learn.quiz.submit'|trans }}
+    </twig:ui:Button>
+    {{ form_end(form) }}
+{% endif %}

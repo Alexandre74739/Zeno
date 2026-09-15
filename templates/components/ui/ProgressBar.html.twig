@@ -1,0 +1,10 @@
+{% props percent, caption = null %}
+
+<div class="flex w-full flex-col gap-2">
+    <div class="h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+        <div class="h-full rounded-full bg-lime transition-all duration-700 ease-out" style="width: {{ percent }}%"></div>
+    </div>
+    {% if caption %}
+        <p class="text-xs text-taupe">{{ caption }}</p>
+    {% endif %}
+</div>

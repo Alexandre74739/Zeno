@@ -157,7 +157,28 @@ login:
 learn:
     meta_title: 'My space | Zeno'
     heading: 'Hi %prenom%!'
-    coming_soon: 'Your personal space is coming very soon: you will find Zeno and all your chat saves there.'
+    stats:
+        streak: 'day streak'
+        total: 'correct answers'
+    mood:
+        angry: 'Zeno is angry: you have been missing your daily questions.'
+        sad: 'Zeno is a bit sad, come back to cheer him up.'
+        neutral: 'Zeno is doing okay, keep it up!'
+        satisfied: 'Zeno is delighted with your streak!'
+        xp_label: 'XP'
+        progress: '%current% / %threshold%'
+        progress_maxed: 'Max level reached!'
+    quiz:
+        heading: "Today's challenge"
+        open_button: "Start today's challenge"
+        close_button: 'Close'
+        submit: 'Answer'
+        xp_reward: '+1 XP'
+        no_question: 'No challenge is available yet, come back soon.'
+        answered_correct: 'Challenge cleared! Zeno is proud of you.'
+        come_back_tomorrow: 'Come back tomorrow for a new challenge.'
+    error:
+        choice_required: 'Pick an answer before submitting.'
 
 cookie_policy:
     title: 'Cookie Policy'

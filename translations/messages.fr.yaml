@@ -157,7 +157,28 @@ login:
 learn:
     meta_title: 'Mon espace | Zeno'
     heading: 'Salut %prenom% !'
-    coming_soon: 'Ton espace personnel arrive très bientôt : tu y retrouveras Zeno et toutes tes sauvegardes de chat.'
+    stats:
+        streak: 'jours de série'
+        total: 'bonnes réponses'
+    mood:
+        angry: 'Zeno est en colère : tu as manqué tes questions du jour.'
+        sad: 'Zeno est un peu triste, reviens vite lui remonter le moral.'
+        neutral: 'Zeno va bien, continue comme ça !'
+        satisfied: 'Zeno est ravi de ta série !'
+        xp_label: 'XP'
+        progress: '%current% / %threshold%'
+        progress_maxed: 'Niveau max atteint !'
+    quiz:
+        heading: 'Défi du jour'
+        open_button: 'Lancer le défi du jour'
+        close_button: 'Fermer'
+        submit: 'Valider'
+        xp_reward: '+1 XP'
+        no_question: "Aucun défi n'est disponible pour le moment, reviens bientôt."
+        answered_correct: 'Défi réussi ! Zeno est fier de toi.'
+        come_back_tomorrow: 'Reviens demain pour un nouveau défi.'
+    error:
+        choice_required: 'Choisis une réponse avant de valider.'
 
 cookie_policy:
     title: 'Politique de cookies'
