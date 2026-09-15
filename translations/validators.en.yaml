@@ -1,0 +1,8 @@
+registration:
+    telephone_invalid: 'Please enter a valid phone number.'
+    email_invalid: 'Please enter a valid email address.'
+    password_not_blank: 'Please enter a password.'
+    password_min_length: 'Your password should be at least {{ limit }} characters.'
+    password_too_weak: 'This password is too simple. Try adding uppercase letters, numbers or symbols.'
+    rgpd_consent_required: 'You must accept the privacy policy to create an account.'
+    email_already_used: 'An account already exists with this email address.'

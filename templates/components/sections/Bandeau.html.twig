@@ -19,6 +19,6 @@
         <p class="max-w-xl text-lg text-ink/80 lg:text-xl">
             {{ 'bandeau.description'|trans }}
         </p>
-        <twig:ui:Button href="#" variant="dark" class="w-full max-w-xs lg:w-auto lg:px-10">{{ 'bandeau.cta_primary'|trans }}</twig:ui:Button>
+        <twig:ui:Button href="{{ app.user ? path('app_learn', {_locale: app.request.locale}) : path('app_register', {_locale: app.request.locale}) }}" variant="dark" class="w-full max-w-xs lg:w-auto lg:px-10">{{ 'bandeau.cta_primary'|trans }}</twig:ui:Button>
     </div>
 </section>

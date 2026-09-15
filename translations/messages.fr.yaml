@@ -1,5 +1,8 @@
 header:
     language_label: 'Langue du site : %language%'
+    account_menu_label: 'Menu du compte'
+    my_space: 'Mon espace'
+    logout: 'Se déconnecter'
 
 home:
     title: 'Prêt à jouer avec Zeno ?'
@@ -96,7 +99,7 @@ privacy_policy:
     controller_heading: 'Responsable du traitement'
     controller_body: "Le responsable du traitement des données est [raison sociale à compléter], contactable à l'adresse [email de contact]."
     data_heading: 'Données collectées'
-    data_body: "Lors de la création d'un compte, nous collectons votre adresse email, votre pseudonyme et votre mot de passe (stocké de façon chiffrée). Nous conservons également votre progression de jeu (réponses données, séries, évolution de votre compagnon virtuel)."
+    data_body: "Lors de la création d'un compte, nous collectons votre nom, votre prénom, votre adresse email, votre numéro de téléphone et votre mot de passe (stocké de façon chiffrée, jamais en clair). Nous conservons également votre progression de jeu (réponses données, séries, évolution de votre compagnon virtuel)."
     purpose_heading: 'Finalités du traitement'
     purpose_body: 'Ces données sont utilisées pour créer et sécuriser votre compte, vous permettre de jouer et de sauvegarder votre progression, et vous contacter en cas de besoin lié à votre compte.'
     legal_basis_heading: 'Base légale'
@@ -111,6 +114,50 @@ privacy_policy:
     security_body: 'Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre tout accès non autorisé, perte ou altération.'
     changes_heading: 'Modifications'
     changes_body: 'Cette politique peut être mise à jour. La date de dernière mise à jour est indiquée en haut de cette page.'
+
+registration:
+    meta_title: 'Créer un compte | Zeno'
+    heading: 'Crée ton compte'
+    prenom_label: 'Prénom'
+    nom_label: 'Nom'
+    email_label: 'Adresse email'
+    telephone_label: 'Téléphone'
+    password_label: 'Mot de passe'
+    password_strength_low: 'Trop faible'
+    password_strength_medium: 'Moyen'
+    password_strength_good: 'Fort'
+    password_strength_excellent: 'Excellent'
+    password_requirement_length: 'Au moins 12 caractères'
+    password_requirement_uppercase: 'Une majuscule'
+    password_requirement_lowercase: 'Une minuscule'
+    password_requirement_number: 'Un chiffre'
+    password_requirement_symbol: 'Un caractère spécial'
+    panel_heading: 'Rejoins la bande à Zeno'
+    panel_description: "Crée ton compte pour sauvegarder ta progression et retrouver ton chat à chaque visite, sur n'importe quel appareil."
+    panel_benefit_save: 'Sauvegarde automatique de ta progression'
+    panel_benefit_cat: 'Retrouve ton compagnon à chaque visite'
+    panel_benefit_secure: 'Tes données sont protégées et jamais revendues'
+    rgpd_consent_label: "J'accepte que mes informations soient utilisées pour créer et gérer mon compte, conformément à la %link_start%politique de confidentialité%link_end%."
+    submit: 'Créer mon compte'
+    already_have_account: 'Tu as déjà un compte ?'
+    login_link: 'Se connecter'
+
+login:
+    meta_title: 'Connexion | Zeno'
+    heading: 'Content de te revoir !'
+    panel_heading: "Ton chat t'attend"
+    panel_description: "Reconnecte-toi pour continuer ta série et retrouver ton compagnon là où tu l'as laissé."
+    panel_streak: 'Ne casse pas ta série du jour'
+    email_label: 'Adresse email'
+    password_label: 'Mot de passe'
+    submit: 'Se connecter'
+    no_account: 'Pas encore de compte ?'
+    register_link: 'Créer un compte'
+
+learn:
+    meta_title: 'Mon espace | Zeno'
+    heading: 'Salut %prenom% !'
+    coming_soon: 'Ton espace personnel arrive très bientôt : tu y retrouveras Zeno et toutes tes sauvegardes de chat.'
 
 cookie_policy:
     title: 'Politique de cookies'

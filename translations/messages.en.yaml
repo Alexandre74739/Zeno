@@ -1,5 +1,8 @@
 header:
     language_label: 'Site language: %language%'
+    account_menu_label: 'Account menu'
+    my_space: 'My space'
+    logout: 'Log out'
 
 home:
     title: 'Ready to play with Zeno?'
@@ -96,7 +99,7 @@ privacy_policy:
     controller_heading: 'Data controller'
     controller_body: 'The data controller is [company name to be completed], reachable at [contact email].'
     data_heading: 'Data collected'
-    data_body: 'When you create an account, we collect your email address, your username and your password (stored encrypted). We also keep your game progress (answers given, streaks, your virtual companion’s growth).'
+    data_body: 'When you create an account, we collect your last name, first name, email address, phone number, and password (stored encrypted, never in plain text). We also keep your game progress (answers given, streaks, your virtual companion’s growth).'
     purpose_heading: 'Purposes of processing'
     purpose_body: 'This data is used to create and secure your account, let you play and save your progress, and contact you about your account when needed.'
     legal_basis_heading: 'Legal basis'
@@ -111,6 +114,50 @@ privacy_policy:
     security_body: 'We implement reasonable technical and organizational measures to protect your data against unauthorized access, loss, or alteration.'
     changes_heading: 'Changes'
     changes_body: 'This policy may be updated from time to time. The last update date is shown at the top of this page.'
+
+registration:
+    meta_title: 'Create an account | Zeno'
+    heading: 'Create your account'
+    prenom_label: 'First name'
+    nom_label: 'Last name'
+    email_label: 'Email address'
+    telephone_label: 'Phone number'
+    password_label: 'Password'
+    password_strength_low: 'Too weak'
+    password_strength_medium: 'Medium'
+    password_strength_good: 'Strong'
+    password_strength_excellent: 'Excellent'
+    password_requirement_length: 'At least 12 characters'
+    password_requirement_uppercase: 'One uppercase letter'
+    password_requirement_lowercase: 'One lowercase letter'
+    password_requirement_number: 'One number'
+    password_requirement_symbol: 'One special character'
+    panel_heading: "Join Zeno's crew"
+    panel_description: 'Create your account to save your progress and find your cat again on any device, every time you visit.'
+    panel_benefit_save: 'Your progress is saved automatically'
+    panel_benefit_cat: 'Find your companion again on every visit'
+    panel_benefit_secure: 'Your data is protected and never resold'
+    rgpd_consent_label: 'I agree that my information will be used to create and manage my account, in accordance with the %link_start%privacy policy%link_end%.'
+    submit: 'Create my account'
+    already_have_account: 'Already have an account?'
+    login_link: 'Log in'
+
+login:
+    meta_title: 'Log in | Zeno'
+    heading: 'Welcome back!'
+    panel_heading: 'Your cat is waiting'
+    panel_description: 'Log back in to keep your streak going and find your companion right where you left them.'
+    panel_streak: "Don't break today's streak"
+    email_label: 'Email address'
+    password_label: 'Password'
+    submit: 'Log in'
+    no_account: "Don't have an account yet?"
+    register_link: 'Create an account'
+
+learn:
+    meta_title: 'My space | Zeno'
+    heading: 'Hi %prenom%!'
+    coming_soon: 'Your personal space is coming very soon: you will find Zeno and all your chat saves there.'
 
 cookie_policy:
     title: 'Cookie Policy'

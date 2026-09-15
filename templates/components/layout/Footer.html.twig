@@ -56,7 +56,7 @@
                     <p class="text-taupe">
                         {{ 'footer.cta_text'|trans }}
                     </p>
-                    <twig:ui:Button href="#" variant="primary">{{ 'footer.cta_primary'|trans }}</twig:ui:Button>
+                    <twig:ui:Button href="{{ app.user ? path('app_learn', {_locale: app.request.locale}) : path('app_register', {_locale: app.request.locale}) }}" variant="primary">{{ 'footer.cta_primary'|trans }}</twig:ui:Button>
                 </div>
             </div>
         </div>

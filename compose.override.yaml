@@ -3,7 +3,8 @@ services:
 ###> doctrine/doctrine-bundle ###
   database:
     ports:
-      - "5432"
+      - "3306"
+      ### Port 3306 is used by the MySQL database. ###
 ###< doctrine/doctrine-bundle ###
 
 ###> symfony/mailer ###

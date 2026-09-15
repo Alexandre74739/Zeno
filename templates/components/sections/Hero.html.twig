@@ -13,8 +13,12 @@
             </div>
 
             <div class="flex w-full max-w-xs flex-col items-center gap-3 lg:w-auto lg:max-w-none lg:flex-row lg:items-center lg:gap-6 lg:animate-fade-in-up lg:[animation-delay:300ms]">
-                <twig:ui:Button href="#" variant="primary" class="w-full lg:w-auto lg:px-10">{{ 'home.cta_primary'|trans }}</twig:ui:Button>
-                <twig:ui:Button href="#" variant="secondary">{{ 'home.cta_secondary'|trans }}</twig:ui:Button>
+                {% if app.user %}
+                    <twig:ui:Button href="{{ path('app_learn', {_locale: app.request.locale}) }}" variant="primary" class="w-full lg:w-auto lg:px-10">{{ 'home.cta_primary'|trans }}</twig:ui:Button>
+                {% else %}
+                    <twig:ui:Button href="{{ path('app_register', {_locale: app.request.locale}) }}" variant="primary" class="w-full lg:w-auto lg:px-10">{{ 'home.cta_primary'|trans }}</twig:ui:Button>
+                    <twig:ui:Button href="{{ path('app_login', {_locale: app.request.locale}) }}" variant="secondary">{{ 'home.cta_secondary'|trans }}</twig:ui:Button>
+                {% endif %}
             </div>
 
             <div class="hidden items-center gap-8 lg:flex lg:animate-fade-in-up lg:[animation-delay:600ms]">

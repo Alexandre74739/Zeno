@@ -1,0 +1,8 @@
+registration:
+    telephone_invalid: 'Merci de renseigner un numéro de téléphone valide.'
+    email_invalid: 'Merci de renseigner une adresse email valide.'
+    password_not_blank: 'Merci de renseigner un mot de passe.'
+    password_min_length: 'Ton mot de passe doit contenir au moins {{ limit }} caractères.'
+    password_too_weak: "Ce mot de passe est trop simple. Essaie d'ajouter des majuscules, des chiffres ou des symboles."
+    rgpd_consent_required: 'Tu dois accepter la politique de confidentialité pour créer un compte.'
+    email_already_used: 'Un compte existe déjà avec cette adresse email.'

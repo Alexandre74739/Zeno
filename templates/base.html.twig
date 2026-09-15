@@ -25,11 +25,26 @@
                     <img src="{{ asset('logos/Logo-text.svg') }}" alt="Zeno" draggable="false" oncontextmenu="return false" class="h-9 w-auto select-none [-webkit-user-drag:none] lg:h-11">
                 </a>
 
-                {% set current_language = app.request.locale == 'en' ? 'English' : 'Français' %}
-                <twig:ui:Dropdown label="{{ 'header.language_label'|trans({'%language%': current_language}) }}">
-                    <a href="{{ path('app_home', {_locale: 'fr'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'fr' ? 'text-lime' : '' }}">Français</a>
-                    <a href="{{ path('app_home', {_locale: 'en'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'en' ? 'text-lime' : '' }}">English</a>
-                </twig:ui:Dropdown>
+                <div class="flex items-center gap-4">
+                    {% if app.user %}
+                        <details class="group relative inline-block text-left" data-controller="dropdown">
+                            <summary class="flex size-9 cursor-pointer list-none items-center justify-center rounded-full bg-lime text-sm font-bold text-ink select-none [&::-webkit-details-marker]:hidden" aria-label="{{ 'header.account_menu_label'|trans }}">
+                                {{ app.user.initials }}
+                            </summary>
+
+                            <div data-action="click->dropdown#close" class="absolute right-0 z-30 mt-2 min-w-40 overflow-hidden rounded-xl border border-cream/10 bg-surface py-1 font-medium text-cream shadow-xl shadow-black/30">
+                                <a href="{{ path('app_learn', {_locale: app.request.locale}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink">{{ 'header.my_space'|trans }}</a>
+                                <a href="{{ path('app_logout', {_locale: app.request.locale}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink">{{ 'header.logout'|trans }}</a>
+                            </div>
+                        </details>
+                    {% endif %}
+
+                    {% set current_language = app.request.locale == 'en' ? 'English' : 'Français' %}
+                    <twig:ui:Dropdown label="{{ 'header.language_label'|trans({'%language%': current_language}) }}">
+                        <a href="{{ path('app_home', {_locale: 'fr'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'fr' ? 'text-lime' : '' }}">Français</a>
+                        <a href="{{ path('app_home', {_locale: 'en'}) }}" class="block px-4 py-2 text-sm transition-colors duration-200 hover:bg-lime hover:text-ink {{ app.request.locale == 'en' ? 'text-lime' : '' }}">English</a>
+                    </twig:ui:Dropdown>
+                </div>
             </div>
         </header>
 

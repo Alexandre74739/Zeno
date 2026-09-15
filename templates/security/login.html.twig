@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'login.meta_title'|trans }}{% endblock %}
+
+{% block body %}
+    <section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-ink px-6 py-24 lg:px-10">
+        <div class="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-surface/60 shadow-2xl shadow-black/40 lg:grid lg:grid-cols-2 lg:min-h-[75vh]">
+            <div class="relative hidden flex-col items-center justify-center gap-12 overflow-hidden bg-linear-to-b from-lime/10 via-transparent to-transparent p-12 text-center lg:flex">
+                <div class="pointer-events-none absolute size-80 rounded-full bg-lime/20 blur-3xl" aria-hidden="true"></div>
+
+                <img src="{{ asset('logos/Logo-happy.svg') }}" alt="" draggable="false" oncontextmenu="return false" class="relative h-72 w-auto select-none [-webkit-user-drag:none]">
+
+                <div class="flex flex-col gap-3">
+                    <p class="text-3xl font-extrabold leading-tight text-cream">
+                        {{ 'login.panel_heading'|trans }}
+                    </p>
+                    <p class="max-w-xs text-taupe">
+                        {{ 'login.panel_description'|trans }}
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-taupe">
+                    <i data-lucide="flame" class="size-4 text-lime" aria-hidden="true"></i>
+                    {{ 'login.panel_streak'|trans }}
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center gap-6 p-6 sm:p-10 lg:p-14">
+                <h1 class="text-center text-2xl font-extrabold leading-tight text-cream lg:text-left lg:text-4xl">
+                    {{ 'login.heading'|trans }}
+                </h1>
+
+                {% if error %}
+                    <div class="flex items-start gap-3 rounded-xl border border-rose-400/30 bg-rose-400/10 px-4 py-3 text-sm text-rose-400" role="alert">
+                        <i data-lucide="circle-alert" class="mt-0.5 size-4 shrink-0" aria-hidden="true"></i>
+                        <span>{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                    </div>
+                {% endif %}
+
+                <form method="post" class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-2">
+                        <label for="username" class="mb-1 block text-sm font-bold text-cream">{{ 'login.email_label'|trans }}</label>
+                        <div class="relative">
+                            <i data-lucide="mail" class="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-taupe" aria-hidden="true"></i>
+                            <input type="email" value="{{ last_username }}" name="_username" id="username" class="w-full rounded-xl border {{ error ? 'border-rose-400/50' : 'border-white/10' }} bg-ink px-4 py-3 pl-12 text-cream placeholder-taupe transition-colors duration-200 focus:border-lime focus:outline-none focus:ring-1 focus:ring-lime" autocomplete="email" required autofocus aria-invalid="{{ error ? 'true' : 'false' }}">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="password" class="mb-1 block text-sm font-bold text-cream">{{ 'login.password_label'|trans }}</label>
+                        <div class="relative">
+                            <i data-lucide="lock-keyhole" class="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-taupe" aria-hidden="true"></i>
+                            <input type="password" name="_password" id="password" class="w-full rounded-xl border {{ error ? 'border-rose-400/50' : 'border-white/10' }} bg-ink px-4 py-3 pl-12 text-cream placeholder-taupe transition-colors duration-200 focus:border-lime focus:outline-none focus:ring-1 focus:ring-lime" autocomplete="current-password" required aria-invalid="{{ error ? 'true' : 'false' }}">
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+                    <button type="submit" class="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-lime px-8 py-4 font-bold text-ink transition-all duration-300 ease-out hover:bg-hover hover:shadow-[0_0_24px_rgba(211,255,46,0.5)]">
+                        {{ 'login.submit'|trans }}
+                    </button>
+                </form>
+
+                <p class="text-center text-sm text-taupe">
+                    {{ 'login.no_account'|trans }}
+                    <a href="{{ path('app_register', {_locale: app.request.locale}) }}" class="font-bold text-lime hover:underline">
+                        {{ 'login.register_link'|trans }}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

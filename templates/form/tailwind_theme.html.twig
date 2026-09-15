@@ -1,0 +1,73 @@
+{% use 'form_div_layout.html.twig' %}
+
+{% block form_row %}
+    {% set field_icons = {
+        prenom: 'user',
+        nom: 'user',
+        email: 'mail',
+        telephone: 'phone',
+        plainPassword: 'lock-keyhole',
+    } %}
+    {% set icon = field_icons[name] ?? null %}
+    <div class="flex flex-col gap-2">
+        {{ form_label(form) }}
+        <div class="relative">
+            {% if icon %}
+                <i data-lucide="{{ icon }}" class="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-taupe" aria-hidden="true"></i>
+            {% endif %}
+            {{ form_widget(form) }}
+        </div>
+        {{ form_errors(form) }}
+        {{ form_help(form) }}
+    </div>
+{% endblock form_row %}
+
+{% block checkbox_row %}
+    <div class="flex flex-col gap-2">
+        <label for="{{ form.vars.id }}" class="flex cursor-pointer items-start gap-3 text-sm text-taupe">
+            {{ form_widget(form) }}
+            <span>
+                {%- set checkbox_label = label ?? form.vars.label -%}
+                {%- if label_html is same as(false) -%}
+                    {{- checkbox_label|trans(label_translation_parameters, translation_domain) -}}
+                {%- else -%}
+                    {{- checkbox_label|trans(label_translation_parameters, translation_domain)|raw -}}
+                {%- endif -%}
+            </span>
+        </label>
+        {{ form_errors(form) }}
+    </div>
+{% endblock checkbox_row %}
+
+{% block form_label -%}
+    {% if label is not same as(false) -%}
+        {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' mb-1 block text-sm font-bold text-cream')|trim}) %}
+    {%- endif %}
+    {{- parent() -}}
+{%- endblock form_label %}
+
+{% block form_widget_simple -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' w-full rounded-xl border border-white/10 bg-ink px-4 py-3 pl-12 text-cream placeholder-taupe transition-colors duration-200 focus:border-lime focus:outline-none focus:ring-1 focus:ring-lime')|trim}) %}
+    {{- parent() -}}
+{%- endblock form_widget_simple %}
+
+{% block checkbox_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' mt-0.5 size-4 shrink-0 rounded border-white/20 bg-ink text-lime accent-lime focus:ring-lime')|trim}) %}
+    {{- parent() -}}
+{%- endblock checkbox_widget %}
+
+{% block form_errors -%}
+    {% if errors|length > 0 -%}
+        <ul class="flex flex-col gap-1">
+            {%- for error in errors %}
+                <li class="text-sm text-rose-400">{{ error.message }}</li>
+            {%- endfor %}
+        </ul>
+    {%- endif %}
+{%- endblock form_errors %}
+
+{% block form_help -%}
+    {% if help is not empty -%}
+        <p class="text-xs text-taupe">{{ block('form_help_content') }}</p>
+    {%- endif %}
+{%- endblock form_help %}
