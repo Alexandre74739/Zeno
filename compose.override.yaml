@@ -5,6 +5,14 @@ services:
     ports:
       - "3306"
       ### Port 3306 is used by the MySQL database. ###
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: database
+    ports:
+      - "8080:8080"
 ###< doctrine/doctrine-bundle ###
 
 ###> symfony/mailer ###
