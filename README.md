@@ -61,6 +61,9 @@ cd zeno
 # Dépendances PHP
 composer install
 
+# APP_SECRET (voir section Configuration ci-dessous) : .env ne le fournit pas
+echo "APP_SECRET=$(php -r 'echo bin2hex(random_bytes(16));')" > .env.dev
+
 # Démarre MySQL (+ Adminer + Mailpit) en arrière-plan
 docker compose up -d
 
@@ -81,9 +84,18 @@ s'active que si la variable d'environnement correspondante est présente).
 
 ## Configuration
 
-- `.env` est committé et ne contient que des valeurs par défaut de dev. Ne
-  jamais y mettre de vrai secret.
-- Les overrides locaux (mots de passe réels, clés d'API...) vont dans
+- `.env` est committé et ne contient que des valeurs par défaut de dev
+  (`APP_SECRET` y est volontairement vide). Ne jamais y mettre de vrai secret.
+- `.env.dev` est **ignoré par git** (voir `.gitignore`) : c'est là qu'`APP_SECRET`
+  est réellement défini pour l'environnement `dev`. Après un clone, ce fichier
+  n'existe pas encore : créez-le (ou un `.env.local`) avec au minimum
+
+  ```bash
+  APP_SECRET=$(php -r 'echo bin2hex(random_bytes(16));')
+  ```
+
+  sinon Symfony démarre avec un `APP_SECRET` vide.
+- Les autres overrides locaux (mots de passe réels, clés d'API...) vont dans
   `.env.local` (ignoré par git) ou dans le coffre à secrets Symfony
   (`bin/console secrets:set`).
 - `DATABASE_URL` par défaut pointe vers le MySQL du `compose.yaml`
