@@ -1,0 +1,30 @@
+# Use the front controller as index file. It serves as a fallback solution when
+# every other rewrite/redirect way has failed.
+DirectoryIndex index.php
+
+# By default, Symfony reacts to the URI scheme and Symfony HTTP hosts to build
+# URLs. If your site can be accessed with several URI schemes / hosts, you can
+# select which is best-suited by using a proxy.
+
+# Uncomment this line to force Symfony to always use SSL
+# RequestHeader set X-Forwarded-Proto "https"
+
+# Fix HTTP_AUTHORIZATION headers
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} .
+RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Determine the RewriteBase automatically and make it available before
+# other rewrite rules
+RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
+RewriteRule .* - [E=BASE:%1]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+
+# If the requested filename exists, simply serve it.
+# We only want to let Apache serve files and not directories.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule .? - [L]
+
+RewriteFileName %{ENV:BASE}/index.php
