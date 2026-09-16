@@ -27,4 +27,4 @@ RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule .? - [L]
 
-RewriteFileName %{ENV:BASE}/index.php
+RewriteRule .? %{ENV:BASE}/index.php [L]
